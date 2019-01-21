@@ -25,17 +25,18 @@ class ListTicket:
         tv.heading('#Name', text='Name')
         tv.heading('#Gender', text='Gender')
         tv.heading('#Comment', text='Comment')
-
-        buDelete = ttk.Button(self._root, text="Delete Record" )
-        buDelete.grid(row=0, column=3, pady=10)
-
-        buUpdate = ttk.Button(self._root, text="Update Record")
-        buUpdate.grid(row=1, column=3, pady=10)
         # style
         style = ttk.Style()
         style.theme_use('clam')
         style.configure('TLabel', background="#e1d8b2")
         style.configure('TButton', background="#e1d8b2")
+        
+        buDelete = ttk.Button(self._root, text="Delete Record" )
+        buDelete.grid(row=0, column=3, pady=10)
+
+        buUpdate = ttk.Button(self._root, text="Update Record")
+        buUpdate.grid(row=1, column=3, pady=10)
+       
         cursor=self._dbconnect.ListRequest()
 
         for row in cursor:
