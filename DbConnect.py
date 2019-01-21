@@ -29,4 +29,4 @@ class DBConnect:
         self._db.commit()
         return ("Record is updated")
 
-
+#DBConnect()

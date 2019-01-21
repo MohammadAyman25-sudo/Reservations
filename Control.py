@@ -8,6 +8,7 @@ dbconnect=DBConnect()
 
 root=Tk()
 root.title("Ticket Reservation")
+root.resizable(0,0)
 root.configure(background="#e1d8b2")
 #style
 style=ttk.Style()
@@ -17,7 +18,7 @@ style.configure('TButton',background="#e1d8b2")
 style.configure('TRadiobutton',background="#e1d8b2")
 #FullName
 ttk.Label(root,text="FullName:").grid(row=0,column=0,padx=10,pady=10)
-EntryFullName=ttk.Entry(root,width=30,font=('Arial',16))
+EntryFullName=ttk.Entry(root,width=30,font=('Impact Regular',16))
 EntryFullName.grid(row=0,column=1,columnspan=2,pady=10)
 #Gender
 ttk.Label(root,text="Gender:").grid(row=1,column=0)

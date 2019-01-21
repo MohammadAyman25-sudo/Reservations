@@ -10,6 +10,13 @@ class Deleterecord:
 
         self._root=Tk()
         self._root.title('Delete Record')
+        self._root.resizable(0, 0)
+        self._root.configure(background="#e1d8b2")
+        # style
+        style = ttk.Style()
+        style.theme_use('clam')
+        style.configure('TLabel', background="#e1d8b2")
+        style.configure('TButton', background="#e1d8b2")
 
         lblID=ttk.Label(self._root,text="ID: ")
         lblID.grid(row=0, column=0,padx=10,pady=10)
@@ -22,7 +29,8 @@ class Deleterecord:
         def BuDelete():
             msg=dbconnect.DeleteRecord(txtID.get())
             messagebox.showinfo(title="Delete info", message=msg)
+            txtID.delete(0,'end')
 
         btndelete.config(command=BuDelete)
         self._root.mainloop()
-#deleterecord()
+#Deleterecord()

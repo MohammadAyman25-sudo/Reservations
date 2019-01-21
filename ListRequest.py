@@ -10,7 +10,11 @@ class ListTicket:
 
     def __init__(self):
         self._root=Tk()
-        self._root.title('List Requist')
+        self._root.title('List Request')
+        self._root.resizable(0, 0)
+        self._root.configure(background="#e1d8b2")
+
+        #Tree View
         self._frame=ttk.Frame(self._root,width=300,height=100)
         self._frame.grid(row=0,column=0,columnspan=3)
         self._dbconnect=DBConnect()
@@ -22,12 +26,16 @@ class ListTicket:
         tv.heading('#Gender', text='Gender')
         tv.heading('#Comment', text='Comment')
 
-        buDelete = ttk.Button(self._root, text="Delete Record")
-        buDelete.grid(row=0, column=3, padx=10, pady=10)
+        buDelete = ttk.Button(self._root, text="Delete Record" )
+        buDelete.grid(row=0, column=3, pady=10)
 
         buUpdate = ttk.Button(self._root, text="Update Record")
-        buUpdate.grid(row=1, column=3, padx=10, pady=10)
-
+        buUpdate.grid(row=1, column=3, pady=10)
+        # style
+        style = ttk.Style()
+        style.theme_use('clam')
+        style.configure('TLabel', background="#e1d8b2")
+        style.configure('TButton', background="#e1d8b2")
         cursor=self._dbconnect.ListRequest()
 
         for row in cursor:
@@ -55,6 +63,6 @@ class ListTicket:
         self._root.mainloop()
 
 
-
+#ListTicket()
 
 
